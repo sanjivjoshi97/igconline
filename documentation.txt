@@ -1,0 +1,88 @@
+--- Documentation of IGC online portal ---  WIP --> Jun 30, 2020 (last edit Sanjiv)
+
+Amidst the COVID-19, online classes have been majorly preferred due to safety concerns and to promote social distancing. IGC preferred WebEx meetings for the online classes.
+But due to increased demand on such services, the free tier have been overcrowded. That's when we decided to move to an open source alternative. We did attempt with Jitsi first, but then it proved to be a little more tedious and missing frequent support from devs. That's when we moved with BBB!
+
+Sincere thanks to 
+Developers : BigBlueButton team (https://github.com/bigbluebutton) 
+
+This documentation is work in progress and this won't be the final document. It will be frequently updated with more information. 
+
+Understanding the platform:
+
+1. The server: 
+   1.1 The platform is hosted on Hetzner (our cloud provider). The server is situated in Helsinki.
+   1.2 It is powered by 8vCPUs, 32 GB RAM and 240GB SSD storage. Thanks to Hetzner, we get a 1Gbps downlink with 20TB monthly limit. 
+   1.3 Capable of supporting multiple rooms, multiple recordings and 300 users at the same time. 
+   1.4 Accessible at https://class.igconlinecoaching.com 
+
+2. The users: 
+   2.1 The server allows user to signup and requires an admin to approve the account, might take a while, if your account isn't active(even after 24hrs) please do contact the admins { sanjivjoshi97@gmail.com, iitiansgateclasses@gmail.com }
+   2.2 By default any user is not assigned any ability. The abilities are activated as per role basis. Currently there are 2 active roles, {Student, Teacher}. 
+   2.3 Users can be banned or deleted without notice if they happen to register without prior permission from the admins. 
+
+3. The roles: 
+   3.1 Student: 
+	3.1.1 As a student, you have the ability to join a meeting after the meeting has started. 
+        3.1.2 If you have a particular doubt that you might want to write on the board, kindly ask the presenter to allow you to annotate on the whiteboard. 
+        3.1.3 You do not have access to create rooms or change site settings. 
+        3.1.4 The recordings will be available in only those rooms you're part of. 
+        3.1.5 Make sure you note the room ID of those rooms you visit in order to visit back those rooms to see the recordings.
+
+   3.2 Teacher:
+        3.2.1 As a teacher, you have the ability to create any number of rooms and even invite someone to the meeting by sharing the meeting link. 
+        3.2.2 Being the default presenter, you can upload PDF or any supported study documents commonly used by Office based applications. 
+        3.2.3 Notes can be written as important points and can be exported. 
+        3.2.4 Please ensure recorder is running. 
+        3.2.5 Please create different rooms for different subjects, thereby the students have access to those recordings for right subject in the right room.
+        3.2.6 Rooms are init with some default settings, which can be changed as and when required. 
+        3.2.7 For particular stream related subjects, please ensure you have added all those users who should technically belong in that class so as to ensure the right people are accessing the right recordings and also limits the students to view only the rooms that they are supposed to see. 
+        3.2.8 For common subjects you may add all the users (turns out it will be tedious, but its something we have to deal with until role based assignment is added). 
+        3.2.9 Kindly name the recordings with topics covered. 
+        3.3.10 Kindly keep the recording default visibility to Public { ensures people who visit those rooms can see}
+
+4. Recordings:
+    4.1 Recordings are enabled if the teacher or the presenter records it. The recordings will be available automatically after a few minutes. (Usually takes 5 mins for large recordings).
+    4.2 They can be viewed only on the server by signing in. (? This is to ensure we're not distributing videos at the basic level at least). 
+    4.3 Since iOS on default (Safari) has a limitation to playing only mp4, the default recording is done using mp4. 
+    4.4 These are to be named on basis of topics covered. 
+
+Meeting rooms: 
+
+1. Karthik Kharbhanda
+    1.1 Mathematics : 
+    1.2 Programming :
+    1.3 Discrete Mathematics: 
+
+2. Prashant Dongre
+    2.1 Digital Electronics: 
+
+3. Deepak
+    3.1 Computer Organisation:  
+
+4. 
+
+Da FAQs: 
+
+1. I'm (Student) not able to zoom the presentation. 
+A. Go full screen mode on the browser and also full screen the presentation. Still not visible? Ask the teacher to zoom the presentation. 
+
+2. Where 'em apps?
+A. This is a browser based meeting platform. (Hey! simplicity is what we want)
+
+3. Feature XYZ missing. 
+A. Maybe reach out to the admin and see if something can be done. Some features can be developed if its viable. Beyond that, ALL HAIL BBB!
+
+4. Not able to see the presentation screen while fullscreen recording playback
+A. The player is obsolete and is something the devs are working on. Meanwhile I have shifted it to be accessible at a newer player with enhanced features. All you need to make sure is change the URL as follows 
+Eg : https://class.igconlinecoaching.com/playback/presentation/2.0/playback.html?meetingId=f03ee76b79b221464b6ffc154f5cd3a8e8b1172c-1593440847024
+
+The above URL will change to 
+
+https://class.igconlinecoaching.com/playback/presentation/2.3/f03ee76b79b221464b6ffc154f5cd3a8e8b1172c-1593440847024
+
+Notice that the part playback.html?meetingId is removed completely and 2.0 is changed to 2.3. This is applicable for all recordings. 
+
+5. Not able to skip scroll like YouTube double tap to seek +/- 10s
+A. The player is not quite there yet. For now, you can seek by pressing arrow keys (on physical keyboard). On android I think so you can do it with those keyboards which have arrow keys (like Swiftkey, hacker's keyboard etc.) 
+
